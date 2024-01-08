@@ -1,0 +1,1 @@
+<a {{ $attributes->merge(['class' => 'text-sm text-white hover:text-medrun-sky-light transition duration-200 flex-shrink-0', 'href' => '#']) }}>{{ $slot }}</a>
