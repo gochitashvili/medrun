@@ -1,4 +1,4 @@
-<footer>
+<footer class="relative">
     <div class="bg-medrun-stone py-7 lg:py-16">
         <div>
             <div class="wrapper py-4 relative flex space-x-8 justify-between">

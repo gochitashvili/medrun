@@ -11,7 +11,7 @@
     <body class="flex flex-col min-h-screen justify-between">
         <div>
             <x-theme.header />
-            <main class="wrapper">
+            <main>
                 {{ $slot }}
             </main>
         </div>
