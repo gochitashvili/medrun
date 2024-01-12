@@ -1,4 +1,4 @@
-<div class="relative pb-0 pt-4 sm:py-4 lg:py-8">
+<div class="relative pb-0 pt-8 lg:py-8">
     <img class="object-cover object-center inset-0 h-3/5 sm:h-full absolute w-full xl:h-full"
         src="https://images.unsplash.com/photo-1543788303-c15e49305bc6?q=80&w=3520&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="">
@@ -8,7 +8,7 @@
             class="relative wrapper-sm flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-2 lg:items-center justify-between">
             <div class="space-y-4 sm:space-y-6">
                 <div class="relative">
-                    <h1 class="text-4xl md:text-5xl xl:text-7xl flex flex-col font-semibold text-medrun-masala">
+                    <h1 class="text-4xl md:text-5xl xl:text-6xl flex flex-col font-semibold text-medrun-masala">
                         56k+ Lab Products
                         <svg class="w-24 xl:w-32 h-3" width="147" height="14" viewBox="0 0 147 14" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

@@ -183,7 +183,7 @@
                 <!-- Logo -->
                 <div class="relative flex items-center">
                     <div class="flex flex-shrink-0 items-center">
-                        <a href="#">
+                        <a href="/">
                             <img class="h-8 sm:h-12 w-auto hover:opacity-90 transition duration-200"
                                 src="{{ asset('images/logo.svg') }}" alt="Medrun">
                         </a>
@@ -257,17 +257,17 @@
                 </x-nav.button>
                 <nav class="flex space-x-4 items-center snap-x overflow-x-auto scrollbar-none" aria-label="Global">
                     <!-- View All Button -->
-                    <x-nav.link href="/">Analytical</x-nav.link>
-                    <x-nav.link href="/">Clinical</x-nav.link>
-                    <x-nav.link href="/">Life Science</x-nav.link>
-                    <x-nav.link href="/">Research News</x-nav.link>
-                    <x-nav.link href="/">Lab Products</x-nav.link>
-                    <x-nav.link href="/">Automation</x-nav.link>
-                    <x-nav.link href="/">Software</x-nav.link>
-                    <x-nav.link href="/">Cell Culture</x-nav.link>
-                    <x-nav.link href="/">Reagents</x-nav.link>
-                    <x-nav.link href="/">Articles</x-nav.link>
-                    <x-nav.link href="/">Service Providers</x-nav.link>
+                    <x-nav.link href="/category">Analytical</x-nav.link>
+                    <x-nav.link href="/category">Clinical</x-nav.link>
+                    <x-nav.link href="/category">Life Science</x-nav.link>
+                    <x-nav.link href="/category">Research News</x-nav.link>
+                    <x-nav.link href="/category">Lab Products</x-nav.link>
+                    <x-nav.link href="/category">Automation</x-nav.link>
+                    <x-nav.link href="/category">Software</x-nav.link>
+                    <x-nav.link href="/category">Cell Culture</x-nav.link>
+                    <x-nav.link href="/category">Reagents</x-nav.link>
+                    <x-nav.link href="/category">Articles</x-nav.link>
+                    <x-nav.link href="/category">Service Providers</x-nav.link>
                 </nav>
 
                 <!-- View All button - Second -->

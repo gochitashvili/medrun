@@ -3,7 +3,7 @@
         <div>
             <div class="wrapper py-4 relative flex space-x-8 justify-between">
                 <div class="max-w-44 sm:max-w-sm">
-                    <a href="#">
+                    <a href="/">
                         <img class="h-8 sm:h-16 w-auto hover:opacity-90 transition duration-200"
                             src="{{ asset('images/logo.svg') }}" alt="Medrun">
                     </a>

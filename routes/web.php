@@ -1,6 +1,8 @@
 <?php
 
+use App\Livewire\Pages\Category;
 use App\Livewire\Pages\Home;
+use App\Livewire\Pages\SellerProfile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', Home::class);
+Route::get('/category', Category::class)->name('category');
+Route::get('/seller', SellerProfile::class)->name('seller');
