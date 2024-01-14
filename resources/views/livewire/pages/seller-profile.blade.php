@@ -2,7 +2,8 @@
     <div class="wrapper-sm">
 
         <!-- Seller Card -->
-        <div class="bg-medrun-light flex-col xs:flex-row space-y-4 xs:space-y-0 flex justify-between border p-4 sm:p-6 mb-8 rounded-xl">
+        <div
+            class="bg-medrun-light flex-col xs:flex-row space-y-4 xs:space-y-0 flex justify-between border p-4 sm:p-6 mb-8 rounded-xl">
             <!-- Seller image -->
             <div class="flex items-center gap-x-6">
                 <div class="hidden lg:block">

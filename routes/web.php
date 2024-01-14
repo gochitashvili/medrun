@@ -3,6 +3,7 @@
 use App\Livewire\Pages\Category;
 use App\Livewire\Pages\Home;
 use App\Livewire\Pages\SellerProfile;
+use App\Livewire\Pages\ServiceDetails;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Home::class);
 Route::get('/category', Category::class)->name('category');
 Route::get('/seller', SellerProfile::class)->name('seller');
+Route::get('/service-details', ServiceDetails::class)->name('service-details');
