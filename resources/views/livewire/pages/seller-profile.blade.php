@@ -54,11 +54,63 @@
         </div>
 
 
+        <!-- Tabs & Search -->
+        <div
+            class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 md:items-center md:justify-between mb-6 md:mb-10">
+            <!-- Tabs -->
+            <div>
+                <ul class="flex items-center space-x-4 sm:space-x-6">
+                    <li>
+                        <!-- Active: font-medium border-medrun-blue -->
+                        <button type="button"
+                            class=" sm:text-2xl border-b border-medrun-blue pb-2 text-medrun-masala font-medium focus-visible:outline-none hover:text-medrun-sky transition duration-200">
+                            Shop
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button"
+                            class=" sm:text-2xl border-b border-transparent pb-2 text-medrun-masala focus-visible:outline-none hover:text-medrun-sky transition duration-200">
+                            About
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button"
+                            class=" sm:text-2xl border-b border-transparent pb-2 text-medrun-masala focus-visible:outline-none hover:text-medrun-sky transition duration-200">
+                            Feedback
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <!-- Search and category filter -->
+            <div class="w-full md:max-w-xl">
+                <div
+                    class="relative border px-4 py-3 w-full rounded-xl bg-white flex items-center space-x-2 justify-between">
+                    <div class="w-full flex space-x-2 items-center">
+                        <x-icon.search class="w-4.5 h-4.5" />
+                        <div class="w-full">
+                            <label for="search-2" class="sr-only">Search</label>
+                            <input type="text" id="search-2" name="search-2" placeholder="Search all 242 items"
+                                class="border-0 text-sm w-full text-medrun-masala focus:placeholder:text-medrun-masala/50 leading-4 p-0 focus:ring-0">
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <x-dropdown title="All Category">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                            <a href="#" class="text-medrun-masala block px-4 py-2 text-sm" role="menuitem"
+                                tabindex="-1" id="menu-item-0">Analytical</a>
+                            <a href="#" class="text-medrun-masala block px-4 py-2 text-sm" role="menuitem"
+                                tabindex="-1" id="menu-item-1">Clinical</a>
+                        </x-dropdown>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Featured Items -->
-        <section class="wrapper-sm mb-8 sm:mb-16">
+        <div class="wrapper-sm mb-8 sm:mb-16">
             <!-- Heading -->
-            <x-section-heading title="Featured" focusText="Items">
-                ...
+            <x-section-heading title="Featured" focusText="Items" variant="flat">
             </x-section-heading>
             <!-- Products grid -->
             <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
@@ -67,13 +119,91 @@
                 <x-product-card labelText="Refurbished" />
                 <x-product-card labelText="Open Box" labelColor="sky" />
             </div>
-        </section>
+        </div>
+
+        <!-- All Items -->
+        <div class="wrapper-sm mb-8">
+            <!-- Heading -->
+            <x-section-heading title="All" focusText="Items" variant="flat">
+                <div class="flex items-center space-x-2">
+                    <label class="text-sm font-medium text-medrun-masala" for="sortby">Sory By:</label>
+                    <select
+                        class="text-sm border border-medrun-blue leading-4 focus-visible:ring-0 transition duration-200 focus:border-medrun-sky text-medrun-masala rounded p-2 pr-8"
+                        name="sortby" id="sortby">
+                        <option value="1">Best Match</option>
+                        <option value="1">Category</option>
+                        <option value="1">Rating</option>
+                        <option value="1">Best Match</option>
+                    </select>
+                </div>
+            </x-section-heading>
+
+            <div class="mt-3 sm:mt-6 space-x-4">
+                <x-dropdown title="Filter-1">
+                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                        id="menu-item-0">Analytical</a>
+                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                        id="menu-item-1">Clinical</a>
+                </x-dropdown>
+                <x-dropdown title="Filter-2">
+                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm" role="menuitem"
+                        tabindex="-1" id="menu-item-0">Analytical</a>
+                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm" role="menuitem"
+                        tabindex="-1" id="menu-item-1">Clinical</a>
+                </x-dropdown>
+                <x-dropdown title="Filter-3">
+                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm" role="menuitem"
+                        tabindex="-1" id="menu-item-0">Analytical</a>
+                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm" role="menuitem"
+                        tabindex="-1" id="menu-item-1">Clinical</a>
+                </x-dropdown>
+            </div>
+            <!-- Products grid -->
+            <div class="mt-3 sm:mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                <x-product-card labelText="Refurbished" />
+                <x-product-card labelText="Open Box" labelColor="sky" />
+                <x-product-card labelText="Refurbished" />
+                <x-product-card labelText="Open Box" labelColor="sky" />
+            </div>
+        </div>
+
+
+        <!-- Pagination -->
+        <div class="mb-8 sm:mb-16 flex justify-center">
+            <nav class="isolate inline-flex gap-x-2" aria-label="Pagination">
+                <a href="#"
+                    class="relative inline-flex items-center rounded-lg p-1.5 text-medrun-masala ring-inset ring-medrun-blue transition duration-200 hover:text-medrun-blue hover:ring-1 focus:z-20 focus:outline-offset-0">
+                    <span class="sr-only">Previous</span>
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 5.25L6.75 9L10.5 12.75L10.5 5.25Z" fill="currentColor" />
+                    </svg>
+                </a>
+                <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+                <a href="#"
+                    class="relative inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-medium text-medrun-blue ring-1 ring-inset ring-medrun-blue transition duration-200 focus:z-20 focus:outline-offset-0">1</a>
+                <a href="#"
+                    class="relative inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-medium text-gray-400 ring-1 ring-inset ring-gray-200 transition duration-200 hover:text-medrun-blue hover:ring-medrun-blue focus:z-20 focus:outline-offset-0">2</a>
+                <a href="#"
+                    class="relative inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-medium text-gray-400 ring-1 ring-inset ring-gray-200 transition duration-200 hover:text-medrun-blue hover:ring-medrun-blue focus:z-20 focus:outline-offset-0">3</a>
+                <a href="#"
+                    class="relative inline-flex items-center rounded-lg p-1.5 text-medrun-masala ring-inset ring-medrun-blue transition duration-200 hover:text-medrun-blue hover:ring-1 focus:z-20 focus:outline-offset-0">
+                    <span class="sr-only">Previous</span>
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.5 5.25L11.25 9L7.5 12.75L7.5 5.25Z" fill="currentColor" />
+                    </svg>
+                </a>
+            </nav>
+        </div>
 
         <!-- Subscribe -->
-        <section class="mb-8 sm:mb-16">
+        <div class="mb-8 sm:mb-16">
             <x-subscribe title="Sign Up for exclusive updates" />
-        </section>
+        </div>
 
     </div>
-    {{-- If your happiness depends on money, you will never be happy with yourself. --}}
 </div>

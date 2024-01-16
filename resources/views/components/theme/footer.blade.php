@@ -20,7 +20,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="hidden lg:flex flex-1 justify-center ">
+                <div class="hidden lg:flex flex-1 max-w-sm justify-start ">
                     <div class="flex flex-col pt-7 items-center space-y-8">
                         <a class="text-white font-semibold block text-center hover:text-medrun-sky transition duration-200"
                             href="tel:1 331 250 2717">1 331 250 2717</a>

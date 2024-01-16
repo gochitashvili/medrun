@@ -32,7 +32,7 @@
 
 
                 @if ($viewMore)
-                            <a href="{{ $viewMore }}"
+                    <a href="{{ $viewMore }}"
                         class="text-sm sm:text-lg text-medrun-masala font-medium hover:text-medrun-blue-light flex items-center gap-x-1">
                         View More
                         <x-icon.chevron-right class="w-4.5 h-4.5" />
@@ -89,6 +89,36 @@
                         <x-icon.chevron-right class="w-4.5 h-4.5" />
                     </a>
                 @endif
+            </div>
+        </div>
+    @break
+
+    @case('flat')
+        <div class="flex lg:flex-col items-center lg:items-start justify-between relative">
+            <div class="relative flex items-center justify-between border-b w-full pb-2">
+                <h2 class="sm:text-2xl sm:font-medium inline-block relative text-medrun-masala ">
+                    {{ $title }}
+                    @if ($focusText)
+                        <span class="font-semibold text-medrun-blue-light">{{ $focusText }}</span>
+                    @endif
+                </h2>
+                {{ $slot }}
+            </div>
+            <div
+                class="lg:absolute bottom-2 border-b lg:border-none lg:pb-0 pb-2 flex shrink-0 lg:w-full items-center gap-x-4 justify-between">
+                @if ($description)
+                    <p class="text-medrun-masala hidden lg:block">{{ $description }}</p>
+                @endif
+
+
+                @if ($viewMore)
+                    <a href="{{ $viewMore }}"
+                        class="text-sm sm:text-lg text-medrun-masala font-medium hover:text-medrun-blue-light flex items-center gap-x-1">
+                        View More
+                        <x-icon.chevron-right class="w-4.5 h-4.5" />
+                    </a>
+                @endif
+
             </div>
         </div>
     @break
