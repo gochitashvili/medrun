@@ -265,266 +265,105 @@
                 </div>
         </section>
 
-        <!-- Rating and Reviews -->
-        <section class="rounded-xl border p-4 lg:p-6">
-            <div>
+        <section>
+            <div class="rounded-xl border p-4 md:p-6 bg-white">
                 <!-- Heading -->
                 <x-section-heading title="Rating and Reviews" variant="simple" />
-                <!-- Reviews -->
-                <div>
-                    <div class="mt-4 flex w-full justify-between">
-                        <h4 class="text-base sm:text-base leading-5 font-semibold text-medrun-masala">Detailed seller
-                            ratings</h4>
-                        <button type="button"
-                            class="inline-flex items-center gap-x-1 text-sm font-medium text-medrun-masala transition duration-200 hover:text-medrun-sky"
-                            id="menu-button" aria-expanded="true" aria-haspopup="true">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M4.59 15.375L13.9913 5.97375L14.3663 5.59875M4.59 15.375L2.0625 15.9375L2.625 13.41M4.59 15.375L2.625 13.41M2.625 13.41L2.81625 13.2188L13.3162 2.71875L13.5075 2.5275L14.1675 3.1875L14.3738 3L15.2963 2.0625L15.9375 2.70375L15 3.63L14.805 3.82125L15.48 4.5L14.355 5.625L14.8837 6.1575L15.4275 6.6975L13.5975 8.5275M14.1788 3.18L14.82 3.82125"
-                                    stroke="Currentcolor" stroke-width="0.75" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            Write a review
-                        </button>
-                    </div>
-                    <p class="mt-3 text-xs leading-5 text-medrun-masala">Average for the last 12 months</p>
-                    <div class="mt-3 space-x-3">
-                        <span class="text-sm leading-5 text-medrun-masala">Overall: 4.2</span>
-                        <span class="text-sm leading-5 text-medrun-masala">Sales: 4.8</span>
-                        <span class="text-sm leading-5 text-medrun-masala">Service: 4.8</span>
-                        <span class="text-sm leading-5 text-medrun-masala">Customer Support: 4.8</span>
-                    </div>
-                </div>
-                <!-- Relavance/button -->
-                <div class="relative inline-flex items-end justify-end py-5 sm:py-6">
+
+                <!-- Detailed rating -->
+                <div class="flex justify-between items-center mb-2 mt-4 sm:mt-6">
+                    <h6 class="font-semibold text-medrun-masala leading-5">Detailed seller ratings</h6>
                     <button type="button"
-                        class="inline-flex items-center gap-x-1 text-sm sm:text-lg leading-5 font-medium text-medrun-masala transition duration-200 hover:text-medrun-sky"
-                        id="menu-button" aria-expanded="true" aria-haspopup="true">
-                        Relavance
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.25 7.5L9 11.25L12.75 7.5H5.25Z" fill="currentColor" />
-                        </svg>
+                        class="text-medrun-masala text-sm font-medium leading-5 hover:text-medrun-sky transition duration-200 flex focus-visible:outline-none gap-x-1 items-center">
+                        <x-icon.pen class="w-4.5 h-4.5" />
+                        Write a review
                     </button>
-                    <!-- Dropdowns -->
-                    <div class=" absolute left-0 top-11 z-10 mt-2 hidden w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                        role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                        <div class="py-1" role="none">
-                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                tabindex="-1" id="menu-item-0">Categories</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                tabindex="-1" id="menu-item-1">Categories</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                tabindex="-1" id="menu-item-2">Categories</a>
+                </div>
+                <span class="text-xs block text-medrun-masala mb-3">Average for the last 12 months</span>
+                <div class="mb-4 sm:mb-6 flex space-x-2">
+                    <p class="text-sm text-medrun-masala "><strong class="font-medium">Value:</strong> 4.2</p>
+                    <p class="text-sm text-medrun-masala "><strong class="font-medium">Learning curve:</strong> 4.8
+                    </p>
+                    <p class="text-sm text-medrun-masala "><strong class="font-medium">Durability:</strong> 4.8</p>
+                </div>
+
+                <div class="tab-wrapper" x-data="{ activeTab: 0 }">
+                    <div class="flex justify-between items-center">
+                        <div class="inline-flex border-b mb-3 md:mb-4 space-x-3 md:space-x-4">
+                            <label @click="activeTab = 0" class="text-xs xs:text-sm text-medrun-masala pb-3"
+                                :class="{ ' font-medium border-b border-medrun-blue': activeTab === 0 }">This Item
+                                (20)</label>
+                            <label @click="activeTab = 1" class="text-xs xs:text-sm text-medrun-masala pb-3"
+                                :class="{ ' font-medium border-b border-medrun-blue': activeTab === 1 }">All Items
+                                (20k)</label>
+                        </div>
+                        <div x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false"
+                            class="relative inline-block text-left">
+                            <div class="flex items-center">
+                                <x-dropdown title="Sory By">
+                                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm"
+                                        role="menuitem" tabindex="-1" id="menu-item-0">Relevance</a>
+                                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm"
+                                        role="menuitem" tabindex="-1" id="menu-item-1">Clinical</a>
+                                </x-dropdown>
+                            </div>
+
+                            <!-- Category select dropdown -->
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                                x-transition:enter-start="transform opacity-0 scale-95"
+                                x-transition:enter-end="transform opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-75"
+                                x-transition:leave-start="transform opacity-100 scale-100"
+                                x-transition:leave-end="transform opacity-0 scale-95"
+                                class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                x-ref="menu-items" role="menu" aria-orientation="vertical"
+                                aria-labelledby="menu-button" tabindex="-1" style="display: none;">
+                                <div class="py-1" role="none">
+                                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm"
+                                        role="menuitem" tabindex="-1" id="menu-item-0">Analytical</a>
+                                    <a href="#" class="text-medrun-masala block px-4 py-2 text-sm"
+                                        role="menuitem" tabindex="-1" id="menu-item-1">Clinical</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="tab-panel" :class="{ 'active': activeTab === 0 }"
+                        x-show.transition.in.opacity.duration.600="activeTab === 0">
+                        <ul class="space-y-4">
+                            @php
+                                $serviceProvidersCount = 4;
+                            @endphp
+                            @for ($i = 0; $i < $serviceProvidersCount; $i++)
+                                <li class="border-b border-gray-200 pb-4">
+                                    <dl>
+                                        <div class="flex justify-between items-center">
+                                            <dt class="text-base font-semibold text-medrun-masala">Adrian Griffen</dt>
+                                            <dd class="text-xs text-medrun-masala"><time
+                                                    datetime="2023-01-23">12/31/2020</time></dd>
+                                        </div>
+                                        <p class="mt-3 text-sm text-medrun-masala">Was exactly as described</p>
+                                        <div
+                                            class="mt-3 flex gap-x-0.5 text-medrun-blue hover:text-medrun-yellow-dark">
+                                            <x-icon.star class="w-3 h-3" />
+                                            <x-icon.star class="w-3 h-3" />
+                                            <x-icon.star class="w-3 h-3" />
+                                            <x-icon.star class="w-3 h-3" />
+                                            <x-icon.star class="w-3 h-3" />
+                                        </div>
+                                    </dl>
+                                </li>
+                            @endfor
+                        </ul>
+                    </div>
+                    <div class="tab-panel" :class="{ 'active': activeTab === 1 }"
+                        x-show.transition.in.opacity.duration.600="activeTab === 1">
+                        <p>The second tab’s example content.</p>
+                    </div>
                 </div>
-                <!-- Adrian Griffen -->
-                <div>
-                    <ul class="flex flex-col space-y-4">
-                        <li class="border-b border-gray-200 pb-4">
-                            <dl>
-                                <div class="flex justify-between">
-                                    <dt class="text-base leading-4 font-semibold text-medrun-masala">Adrian Griffen
-                                    </dt>
-                                    <dd class="text-xs text-medrun-masala"><time
-                                            datetime="2023-01-23">12/31/2020</time></dd>
-                                </div>
-                                <p class="mt-3 text-sm text-medrun-masala">Was exactly as described</p>
-                                <div class="mt-3 flex gap-x-0.5">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                </div>
-                            </dl>
-                        </li>
-                        <li class="border-b border-gray-200 pb-4">
-                            <dl>
-                                <div class="flex justify-between">
-                                    <dt class="text-base leading-4 font-semibold text-medrun-masala">Adrian Griffen
-                                    </dt>
-                                    <dd class="text-xs text-medrun-masala"><time
-                                            datetime="2023-01-23">12/31/2020</time></dd>
-                                </div>
-                                <p class="mt-3 text-sm text-medrun-masala">Was exactly as described</p>
-                                <div class="mt-3 flex gap-x-0.5">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                </div>
-                            </dl>
-                        </li>
-                        <li class="border-b border-gray-200 pb-4">
-                            <dl>
-                                <div class="flex justify-between">
-                                    <dt class="text-base leading-4 font-semibold text-medrun-masala">Adrian Griffen
-                                    </dt>
-                                    <dd class="text-xs text-medrun-masala"><time
-                                            datetime="2023-01-23">12/31/2020</time></dd>
-                                </div>
-                                <p class="mt-3 text-sm text-medrun-masala">Was exactly as described</p>
-                                <div class="mt-3 flex gap-x-0.5">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                </div>
-                            </dl>
-                        </li>
-                        <li class="border-b border-gray-200 pb-4">
-                            <dl>
-                                <div class="flex justify-between">
-                                    <dt class="text-base leading-4 font-semibold text-medrun-masala">Adrian Griffen
-                                    </dt>
-                                    <dd class="text-xs text-medrun-masala"><time
-                                            datetime="2023-01-23">12/31/2020</time></dd>
-                                </div>
-                                <p class="mt-3 text-sm text-medrun-masala">Was exactly as described</p>
-                                <div class="mt-3 flex gap-x-0.5">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.05544 0.717387C5.36673 -0.178173 6.63327 -0.178173 6.94456 0.717387L7.65244 2.75386C7.78977 3.14893 8.15846 3.4168 8.57663 3.42532L10.7322 3.46925C11.6801 3.48857 12.0715 4.69311 11.3159 5.26592L9.59789 6.56845C9.2646 6.82114 9.12377 7.25456 9.24489 7.6549L9.86921 9.71852C10.1438 10.626 9.11912 11.3705 8.34087 10.8289L6.57118 9.59746C6.22786 9.35856 5.77214 9.35856 5.42882 9.59746L3.65913 10.8289C2.88088 11.3705 1.85624 10.626 2.13079 9.71852L2.75511 7.6549C2.87623 7.25456 2.7354 6.82114 2.40211 6.56845L0.684051 5.26592C-0.0714817 4.69311 0.319899 3.48857 1.26782 3.46925L3.42337 3.42532C3.84154 3.4168 4.21023 3.14893 4.34756 2.75386L5.05544 0.717387Z"
-                                            fill="#08235A" />
-                                    </svg>
-                                </div>
-                            </dl>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mt-4 flex justify-center">
-                    <nav class="isolate inline-flex gap-x-3" aria-label="Pagination">
-                        <a href="#"
-                            class="relative inline-flex items-center rounded-l-lg px-4 py-2 text-medrun-masala ring-inset ring-medrun-blue transition duration-200 hover:text-medrun-blue hover:ring-1 focus:z-20 focus:outline-offset-0">
-                            <span class="sr-only">Previous</span>
-                            <svg class="w-4 h-4" viewBox="0 0 18 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.5 5.25L6.75 9L10.5 12.75L10.5 5.25Z" fill="currentColor" />
-                            </svg>
-                        </a>
-                        <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
-                        <a href="#"
-                            class="relative inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-medrun-blue ring-1 ring-inset ring-medrun-blue transition duration-200 focus:z-20 focus:outline-offset-0">1</a>
-                        <a href="#"
-                            class="relative inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-gray-400 ring-1 ring-inset ring-gray-200 transition duration-200 hover:text-medrun-blue hover:ring-medrun-blue focus:z-20 focus:outline-offset-0">2</a>
-                        <a href="#"
-                            class="relative inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-gray-400 ring-1 ring-inset ring-gray-200 transition duration-200 hover:text-medrun-blue hover:ring-medrun-blue focus:z-20 focus:outline-offset-0">3</a>
-                        <a href="#"
-                            class="relative inline-flex items-center rounded-r-lg px-4 py-2 text-medrun-masala ring-inset ring-medrun-blue transition duration-200 hover:text-medrun-blue hover:ring-1 focus:z-20 focus:outline-offset-0">
-                            <span class="sr-only">Previous</span>
-                            <svg class="w-4 h-4" viewBox="0 0 18 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.5 5.25L11.25 9L7.5 12.75L7.5 5.25Z" fill="currentColor" />
-                            </svg>
-                        </a>
-                    </nav>
-                </div>
+
+            </div>
         </section>
     </div>
 </div>

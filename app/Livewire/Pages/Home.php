@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Home extends Component
 {
-    #[Title('Home')] 
+    #[Title('MedRun')] 
     public function render()
     {
         return view('livewire.pages.home');

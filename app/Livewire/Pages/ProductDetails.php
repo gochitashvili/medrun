@@ -2,13 +2,14 @@
 
 namespace App\Livewire\Pages;
 use Livewire\Attributes\Title;
+
 use Livewire\Component;
 
-class SellerProfile extends Component
+class ProductDetails extends Component
 {
-    #[Title('Seller Profile')] 
+    #[Title('Product Details')] 
     public function render()
     {
-        return view('livewire.pages.seller-profile');
+        return view('livewire.pages.product-details');
     }
 }
