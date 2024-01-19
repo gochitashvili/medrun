@@ -11,24 +11,24 @@
             <!-- Product -->
             <div class="flex flex-col space-y-4 md:flex-row md:space-x-6">
                 <!-- Images -->
-                <div
-                    class="flex-shrink-0 mx-auto rounded-xl border p-4 md:p-6 bg-white flex flex-col sm:flex-row items-center sm:items-stretch sm:space-x-5">
+                <div class="flex-shrink-0 mx-auto rounded-xl border p-4 bg-white flex flex-col  items-center  ">
                     <!-- Thumbinails -->
-                    <div
-                        class="relative order-last mt-3 sm:mt-0 sm:order-first flex justify-between sm:space-y-3 flex-col">
-                        <div class="space-x-2 sm:space-x-0 sm:space-y-3 flex sm:flex-col items-center">
+                    <div class="relative order-last mt-3 flex justify-between sm:space-y-3 flex-col">
+                        <div class="space-x-2   flex  items-center">
                             <div
-                                class="p-1.5 sm:p-3 flex items-center hover:cursor-pointer justify-center rounded-md sm:rounded-xl bg-white border border-medrun-masala hover:border-medrun-masala transition duration-200">
-                                <img class="object-cover object-center" src="https://placehold.co/54x54" alt="thumb-1">
+                                class="p-1.5  flex items-center hover:cursor-pointer justify-center rounded-md sm:rounded-xl bg-white border border-medrun-masala hover:border-medrun-masala transition duration-200">
+                                <img class="object-cover w-11 h-11 object-center" src="https://placehold.co/44x44"
+                                    alt="thumb-1">
                             </div>
                             <div
-                                class="p-1.5 sm:p-3 flex items-center hover:cursor-pointer justify-center rounded-md sm:rounded-xl bg-white border hover:border-medrun-masala transition duration-200">
-                                <img class="object-cover object-center" src="https://placehold.co/54x54" alt="thumb-1">
+                                class="p-1.5  flex items-center hover:cursor-pointer justify-center rounded-md sm:rounded-xl bg-white border hover:border-medrun-masala transition duration-200">
+                                <img class="object-cover w-11 h-11 object-center" src="https://placehold.co/44x44"
+                                    alt="thumb-2">
                             </div>
                         </div>
 
                         <!-- Swich -->
-                        <div class="flex justify-center sm:justify-start space-x-2 items-center mt-2 sm:mt-0">
+                        <div class="flex justify-center  space-x-2 items-center mt-2 sm:mt-0">
                             <!-- Active: w-1.5 sm:w-4.5 Not active: w-1.5 sm:w-2 opacity-20 -->
                             <span class="block w-3 h-1.5 sm:w-4.5 sm:h-2 bg-medrun-masala rounded-full"></span>
                             <span
@@ -38,7 +38,7 @@
                     </div>
                     <!-- Main Photo -->
                     <div>
-                        <img class="w-64 rounded-xl aspect-square" src="https://placehold.co/240x240" alt="">
+                        <img class="w-80 rounded-xl aspect-square" src="https://placehold.co/320x320" alt="">
                     </div>
                 </div>
 
@@ -704,7 +704,8 @@
                                                     datetime="2023-01-23">12/31/2020</time></dd>
                                         </div>
                                         <p class="mt-3 text-sm text-medrun-masala">Was exactly as described</p>
-                                        <div class="mt-3 flex gap-x-0.5 text-medrun-blue hover:text-medrun-yellow-dark">
+                                        <div
+                                            class="mt-3 flex gap-x-0.5 text-medrun-blue hover:text-medrun-yellow-dark">
                                             <x-icon.star class="w-3 h-3" />
                                             <x-icon.star class="w-3 h-3" />
                                             <x-icon.star class="w-3 h-3" />
