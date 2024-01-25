@@ -1,5 +1,5 @@
 <div class="mb-6 mt-6 sm:mt-8 wrapper">
-    <div class="wrapper-sm space-y-8">
+    <div class=" space-y-8">
 
         <!-- Service Card -->
         <div

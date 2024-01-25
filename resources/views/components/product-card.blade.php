@@ -14,7 +14,7 @@
 
 @switch($variant)
     @case('default')
-        <div class="relative bg-white pt-3 pb-16 px-2 rounded-xl gap-3 {{ $promotedClass }} lg:max-w-72">
+        <div class="relative bg-white pt-3 pb-16 px-2 rounded-xl gap-3 {{ $promotedClass }} lg:max-w-72 2xl:max-w-96">
 
             <!-- Product Label -->
             @if ($labelText)
@@ -49,7 +49,7 @@
     @break
 
     @case('simple')
-        <div class="relative bg-white py-3 px-4 rounded-xl gap-3 border lg:max-w-72">
+        <div class="relative bg-white py-3 px-4 rounded-xl gap-3 border lg:max-w-72 2xl:max-w-96">
 
             <!-- Image -->
             <div class="mb-3">

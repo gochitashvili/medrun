@@ -1,4 +1,4 @@
-<div class="rounded-xl flex flex-col gap-3 bg-white border p-4 lg:max-w-72">
+<div class="rounded-xl flex flex-col gap-3 bg-white border p-4  2xl:max-w-none">
     <!-- Author -->
     <div class="flex items-center space-x-2">
         <img class="sm:w-12 sm:h-12 w-10 h-10 rounded-full object-cover object-center"

@@ -5,7 +5,7 @@
     <div class="absolute inset-0 bottom-36 bg-gradient-to-t from-white/85 to-white/30 w-full h-full"></div>
     <div class="wrapper">
         <div
-            class="relative wrapper-sm flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-2 lg:items-center justify-between">
+            class="relative  flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-2 lg:items-center justify-between">
             <div class="space-y-4 sm:space-y-6">
                 <div class="relative">
                     <h1 class="text-4xl md:text-5xl xl:text-6xl flex flex-col font-semibold text-medrun-masala">

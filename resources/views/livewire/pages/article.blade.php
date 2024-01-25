@@ -1,5 +1,5 @@
 <div class="mb-6 mt-6 sm:mt-8 wrapper">
-    <div class="wrapper-sm">
+    <div class="">
         <div class="bg-medrun-light mt-4 border p-4 lg:p-6 mb-8 rounded-xl">
             <!-- Service image -->
             <div class="flex flex-col gap-y-6 lg:gap-y-0 lg:flex-row items-center lg:gap-x-6">

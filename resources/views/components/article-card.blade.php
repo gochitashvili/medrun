@@ -1,4 +1,4 @@
-<div class="relative bg-white pb-4 overflow-hidden  rounded-xl gap-3 lg:max-w-72 border">
+<div class="relative bg-white pb-4 overflow-hidden  rounded-xl gap-3 lg:max-w-72 2xl:max-w-96 border">
     <!-- Image -->
     <div class="mb-3">
         <a href="#">

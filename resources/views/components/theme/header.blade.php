@@ -1,3 +1,26 @@
+@props(['variant' => 'full-width'])
+
+
+@switch($variant)
+    @case('full-width')
+        @php
+            $variantClass = 'wrapper';
+        @endphp
+    @break
+
+    @case('max-width')
+        @php
+            $variantClass = 'wrapper-sm';
+        @endphp
+    @break
+
+    @default
+        @php
+            $variantClass = 'wrapper';
+        @endphp
+@endswitch
+
+
 <header x-data="{ open: false }" @keydown.window.escape="open = false">
     <!--
     Mobile menu
@@ -179,7 +202,7 @@
     </div>
     <div class="bg-medrun-blue pt-2 sm:pt-0">
         <div>
-            <div class="wrapper py-4 relative flex gap-x-4 lg:gap-x-6 justify-between">
+            <div class="{{ $variantClass }} py-4 relative flex gap-x-4 lg:gap-x-6 justify-between">
                 <!-- Logo -->
                 <div class="relative flex items-center">
                     <div class="flex flex-shrink-0 items-center">
@@ -232,7 +255,7 @@
             </div>
             <!-- Mobile Search -->
             <!-- Search -->
-            <div class="wrapper block md:hidden mb-4">
+            <div class="{{ $variantClass }} block md:hidden mb-4">
                 <div class="w-full">
                     <label for="mobile-search" class="sr-only">Search Medrun</label>
                     <div class="flex rounded-xl">
@@ -250,7 +273,7 @@
             </div>
         </div>
         <div class="bg-medrun-blue-light">
-            <div class="wrapper py-4 flex items-center gap-x-4 justify-between">
+            <div class="{{ $variantClass }} py-4 flex items-center gap-x-4 justify-between">
                 <x-nav.button @click="open = true" class="lg:hidden">
                     <x-icon.chevron-down class="-ml-1 w-4.5 h-4.5" />
                     All

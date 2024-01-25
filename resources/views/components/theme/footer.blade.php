@@ -1,7 +1,28 @@
+@props(['variant' => 'full-width'])
+
+
+@switch($variant)
+    @case('full-width')
+        @php
+            $variantClass = 'wrapper';
+        @endphp
+    @break
+
+    @case('max-width')
+        @php
+            $variantClass = 'wrapper-sm';
+        @endphp
+    @break
+
+    @default
+        @php
+            $variantClass = 'wrapper';
+        @endphp
+@endswitch
 <footer class="relative">
     <div class="bg-medrun-stone py-7 lg:py-16">
         <div>
-            <div class="wrapper py-4 relative flex space-x-8 justify-between">
+            <div class="{{ $variantClass }} py-4 relative flex space-x-8 justify-between">
                 <div class="max-w-44 sm:max-w-sm">
                     <a href="/">
                         <img class="h-8 sm:h-16 w-auto hover:opacity-90 transition duration-200"

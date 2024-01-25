@@ -55,14 +55,14 @@
             </div>
         </div>
     </div>
-    <div class="wrapper-sm">
+    <div class="">
         <div class="grid gap-4 grid-cols-12 mb-8 sm:mb-16">
             <!-- Filters -->
-            <div class="hidden lg:block lg:col-span-3 p-3 lg:p-4 border rounded-xl bg-white">
+            <div class="hidden lg:block lg:col-span-3 2xl:col-span-2 p-3 lg:p-4 border rounded-xl bg-white">
                 <x-filter-articles class="hidden lg:block" />
             </div>
 
-            <div class="col-span-12 lg:col-span-9">
+            <div class="col-span-12 lg:col-span-9 2xl:col-span-10">
                 <!-- Heading -->
                 <div class="relative">
                     <x-page-heading title="Home" focusText="Articles" />
@@ -73,7 +73,9 @@
                         </button>
                     </div>
                 </div>
-                <div class="mt-4 md:mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3">
+                <div class="mt-4 md:mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
+                    <x-article-card />
+                    <x-article-card />
                     <x-article-card />
                     <x-article-card />
                     <x-article-card />

@@ -1,5 +1,5 @@
 <div class="mb-6 mt-6 sm:mt-8 wrapper">
-    <div class="wrapper-sm">
+    <div class="">
 
         <!-- Product details -->
         <div class="mb-8 sm:mb-16">

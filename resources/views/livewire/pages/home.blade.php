@@ -2,7 +2,7 @@
     <x-hero />
     <div class="wrapper">
         
-        <div class="wrapper-sm py-4 flex items-center gap-x-4 justify-between">
+        <div class=" py-4 flex items-center gap-x-4 justify-between">
             <ul class="flex space-x-4 lg:space-x-6 items-center snap-x overflow-x-auto scrollbar-none">
                 <li class="flex items-center gap-x-4 lg:gap-x-6 shrink-0">
                     <a class="text-medrun-masala hover:text-medrun-sky-light transition duration-200 "
@@ -37,38 +37,40 @@
 
         <div class="mt-6 mb-8 sm:mb-16 space-y-6 sm:space-y-16">
             <!-- Trending Products -->
-            <section class="wrapper-sm ">
+            <section class=" ">
                 <!-- Heading -->
                 <x-section-heading title="Trending" focusText="Products"
                     description="Check the hottest website designs of the week. These rising stars are worth your attention."
                     viewMore="#" />
                 <!-- Products grid -->
-                <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
                     <x-product-card labelText="Refurbished" />
                     <x-product-card labelText="Open Box" labelColor="sky" />
                     <x-product-card labelText="Refurbished" />
+                    <x-product-card labelText="Open Box" labelColor="sky" />
                     <x-product-card labelText="Open Box" labelColor="sky" />
                 </div>
             </section>
 
             <!-- Recent Products -->
-            <section class="wrapper-sm ">
+            <section class=" ">
                 <!-- Heading -->
                 <x-section-heading title="Recent" focusText="Products"
                     description="Meet our newbies! The latest website templates uploaded to the marketplace."
                     viewMore="#" />
                 <!-- Products grid -->
-                <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
                     <x-product-card labelText="Refurbished" />
                     <x-product-card labelText="Open Box" labelColor="sky" />
                     <x-product-card labelText="Refurbished" />
+                    <x-product-card labelText="Open Box" labelColor="sky" />
                     <x-product-card labelText="Open Box" labelColor="sky" />
                 </div>
             </section>
 
 
             <!-- Reviews -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <x-section-heading focusText="Reviews" centered="true" variant="centered"
@@ -83,7 +85,7 @@
             </section>
 
             <!-- Feature section -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <div class="hidden lg:block mb-16">
@@ -136,7 +138,7 @@
                                 </ul>
                             </div>
                             <!-- Feature Images -->
-                            <div class="flex-1 order-first lg:order-none mb-6 lg:mb-0">
+                            <div class="flex-1 order-first max-w-xl flex justify-end lg:order-none mb-6 lg:mb-0">
                                 <div class="pb-10 relative pr-10 ">
                                     <img class="rounded-3xl w-full max-w-lg object-cover object-center"
                                         src="https://plus.unsplash.com/premium_photo-1663011060714-714bf182f0cf?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -154,7 +156,7 @@
 
 
                             <!-- Feature Images -->
-                            <div class="flex-1 order-first lg:order-none mb-6 lg:mb-0">
+                            <div class="flex-1 order-first max-w-xl flex justify-start lg:order-none mb-6 lg:mb-0">
                                 <div class="pb-10 relative pr-10 ">
                                     <img class="rounded-3xl w-full max-w-lg object-cover object-center"
                                         src="https://plus.unsplash.com/premium_photo-1663011060714-714bf182f0cf?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -200,7 +202,7 @@
                 </div>
             </section>
 
-            <section class="wrapper-sm">
+            <section class="">
                 <!-- All Products link -->
                 <div class="pt-4  flex justify-center px-0.5">
                     <a class="text-white inline-flex font-semibold text-lg leading-4.5 bg-medrun-blue-light hover:bg-medrun-stone-light transition duration-200 py-4.5 px-6 text-center rounded-lg"
@@ -211,7 +213,7 @@
             </section>
 
             <!-- Lab Products -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div class="mb-4 lg:mb-6">
                     <x-section-heading focusText="MEDRUN" centered="true" variant="centered"
                         description="Marketplace Products" />
@@ -221,7 +223,8 @@
                     <!-- Heading -->
                     <x-section-heading title="Lab" focusText="Products" variant="simple" viewMore="#" />
                     <!-- Products grid -->
-                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                        <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
@@ -231,12 +234,13 @@
             </section>
 
             <!-- Bio Process -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <x-section-heading title="Bio" focusText="Process" variant="simple" viewMore="#" />
                     <!-- Products grid -->
-                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                        <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
@@ -246,12 +250,13 @@
             </section>
 
             <!-- Automation -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <x-section-heading title="Automation" variant="simple" viewMore="#" />
                     <!-- Products grid -->
-                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                        <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
@@ -262,12 +267,13 @@
 
 
             <!-- Detection -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <x-section-heading title="Detection" variant="simple" viewMore="#" />
                     <!-- Products grid -->
-                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                        <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
@@ -277,12 +283,13 @@
             </section>
 
             <!-- Software -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <x-section-heading title="Software" variant="simple" viewMore="#" />
                     <!-- Products grid -->
-                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                        <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
@@ -292,12 +299,13 @@
             </section>
 
             <!-- Storage -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <x-section-heading title="Storage" variant="simple" viewMore="#" />
                     <!-- Products grid -->
-                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                        <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
@@ -308,13 +316,14 @@
 
 
             <!-- Cell Culture and consumables -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <x-section-heading title="Cell Culture and" focusText="Consumables" variant="simple"
                         viewMore="#" />
                     <!-- Products grid -->
-                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                        <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
@@ -324,12 +333,13 @@
             </section>
 
             <!-- Reagents -->
-            <section class="wrapper-sm">
+            <section class="">
                 <div>
                     <!-- Heading -->
                     <x-section-heading title="Reagents" variant="simple" viewMore="#" />
                     <!-- Products grid -->
-                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+                    <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                        <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
                         <x-product-card variant="simple" />
@@ -339,7 +349,7 @@
             </section>
 
             <!-- Subscribe -->
-            <section class="wrapper-sm">
+            <section class="">
                 <x-subscribe title="Sign Up for exclusive updates" />
             </section>
         </div>

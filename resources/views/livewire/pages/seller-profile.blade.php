@@ -1,5 +1,5 @@
 <div class="mb-6 mt-6 sm:mt-8 wrapper">
-    <div class="wrapper-sm">
+    <div class="">
 
         <!-- Seller Card -->
         <div
@@ -108,12 +108,13 @@
 
 
         <!-- Featured Items -->
-        <div class="wrapper-sm mb-8 sm:mb-16">
+        <div class=" mb-8 sm:mb-16">
             <!-- Heading -->
             <x-section-heading title="Featured" focusText="Items" variant="flat">
             </x-section-heading>
             <!-- Products grid -->
-            <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+            <div class="mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
+                <x-product-card labelText="Refurbished" />
                 <x-product-card labelText="Refurbished" />
                 <x-product-card labelText="Open Box" labelColor="sky" />
                 <x-product-card labelText="Refurbished" />
@@ -122,7 +123,7 @@
         </div>
 
         <!-- All Items -->
-        <div class="wrapper-sm mb-8">
+        <div class=" mb-8">
             <!-- Heading -->
             <x-section-heading title="All" focusText="Items" variant="flat">
                 <div class="flex items-center space-x-2">
@@ -162,9 +163,10 @@
                 </x-dropdown>
             </div>
             <!-- Products grid -->
-            <div class="mt-3 sm:mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4">
+            <div class="mt-3 sm:mt-6 grid gap-4 grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
                 <x-product-card labelText="Refurbished" />
                 <x-product-card labelText="Open Box" labelColor="sky" />
+                <x-product-card labelText="Refurbished" />
                 <x-product-card labelText="Refurbished" />
                 <x-product-card labelText="Open Box" labelColor="sky" />
             </div>

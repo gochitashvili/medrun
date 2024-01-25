@@ -5,9 +5,10 @@
 
 @layer components {
   .wrapper {
-    @apply w-full max-w-[1288px] px-4 sm:px-6 mx-auto;
+    @apply w-full max-w-[1848px] px-4 sm:px-6 mx-auto;
   }
   .wrapper-sm {
-    @apply w-full max-w-[1200px] mx-auto;
+    @apply w-full max-w-[1464px] px-4 sm:px-6 mx-auto;
   }
+  
 }
