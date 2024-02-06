@@ -11,7 +11,7 @@
             <!-- Product -->
             <div class="flex flex-col space-y-4 lg:flex-row md:space-x-6">
                 <!-- Images -->
-                <div class="w-full max-w-[834px] mx-auto rounded-xl border p-4 bg-white flex flex-col  items-center lg:flex-row">
+                <div class="w-full max-w-[834px] mx-auto rounded-xl border p-4 bg-white flex flex-col  items-center ">
                     <!-- Thumbinails -->
                     <div class="relative order-last mt-3 flex justify-between sm:space-y-3 flex-col">
                         <div class="space-x-2   flex  items-center">
