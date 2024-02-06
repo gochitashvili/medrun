@@ -9,27 +9,26 @@
             </div>
 
             <!-- Product -->
-            <div class="flex flex-col space-y-4 md:flex-row md:space-x-6">
+            <div class="flex flex-col space-y-4 lg:flex-row md:space-x-6">
                 <!-- Images -->
-                <div class="flex-shrink-0 mx-auto rounded-xl border p-4 bg-white flex flex-col  items-center  ">
+                <div class="w-full max-w-[834px] mx-auto rounded-xl border p-4 bg-white flex flex-col  items-center lg:flex-row">
                     <!-- Thumbinails -->
                     <div class="relative order-last mt-3 flex justify-between sm:space-y-3 flex-col">
                         <div class="space-x-2   flex  items-center">
                             <div
                                 class="p-1.5  flex items-center hover:cursor-pointer justify-center rounded-md sm:rounded-xl bg-white border border-medrun-masala hover:border-medrun-masala transition duration-200">
-                                <img class="object-cover w-11 h-11 object-center" src="https://placehold.co/44x44"
+                                <img class="object-cover w-12 h-12 object-center" src="https://placehold.co/48x48"
                                     alt="thumb-1">
                             </div>
                             <div
                                 class="p-1.5  flex items-center hover:cursor-pointer justify-center rounded-md sm:rounded-xl bg-white border hover:border-medrun-masala transition duration-200">
-                                <img class="object-cover w-11 h-11 object-center" src="https://placehold.co/44x44"
+                                <img class="object-cover w-12 h-12 object-center" src="https://placehold.co/48x48"
                                     alt="thumb-2">
                             </div>
                         </div>
 
                         <!-- Swich -->
                         <div class="flex justify-center  space-x-2 items-center mt-2 sm:mt-0">
-                            <!-- Active: w-1.5 sm:w-4.5 Not active: w-1.5 sm:w-2 opacity-20 -->
                             <span class="block w-3 h-1.5 sm:w-4.5 sm:h-2 bg-medrun-masala rounded-full"></span>
                             <span
                                 class="block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-medrun-masala opacity-20 rounded-full"></span>
@@ -38,7 +37,7 @@
                     </div>
                     <!-- Main Photo -->
                     <div>
-                        <img class="w-80 rounded-xl aspect-square" src="https://placehold.co/320x320" alt="">
+                        <img class="w-auto  rounded-xl " src="https://placehold.co/800x630" alt="">
                     </div>
                 </div>
 
@@ -129,11 +128,8 @@
                         <a class="text-medrun-blue hover:text-medrun-sky transition duration-200 text-sm font-semibold leading-5"
                             href="#">Sell Now</a>
                     </div>
-
-                </div>
-
                 <!-- Shipping & Payments -->
-                <div class="hidden xl:block max-w-72 rounded-xl border p-4 md:p-6 bg-white">
+                <div class="mt-6">
                     <div class="mb-4">
                         <h5 class="font-semibold text-medrun-masala leading-5 mb-2">Shipping:</h5>
                         <p class="text-sm leading-4 text-medrun-masala ">
@@ -151,16 +147,19 @@
                     </div>
                     <div class="mb-4">
                         <h5 class="font-semibold text-medrun-masala leading-5 mb-2">Payment:</h5>
-                        <div class="grid grid-cols-3">
-                            <img src="{{ asset('images/payments/PayPal.svg') }}" alt="paypal">
-                            <img src="{{ asset('images/payments/Gpay.svg') }}" alt="Gpay">
-                            <img src="{{ asset('images/payments/Visa.svg') }}" alt="Visa">
-                            <img src="{{ asset('images/payments/MasterCard.svg') }}" alt="MasterCard">
-                            <img src="{{ asset('images/payments/Amex.svg') }}" alt="Amex">
-                            <img src="{{ asset('images/payments/Discovery.svg') }}" alt="Discovery">
+                        <div class="grid grid-cols-3 xs:grid-cols-6">
+                            <img class="h-12 w-auto" src="{{ asset('images/payments/PayPal.svg') }}" alt="paypal">
+                            <img class="h-12 w-auto" src="{{ asset('images/payments/Gpay.svg') }}" alt="Gpay">
+                            <img class="h-12 w-auto" src="{{ asset('images/payments/Visa.svg') }}" alt="Visa">
+                            <img class="h-12 w-auto" src="{{ asset('images/payments/MasterCard.svg') }}" alt="MasterCard">
+                            <img class="h-12 w-auto" src="{{ asset('images/payments/Amex.svg') }}" alt="Amex">
+                            <img class="h-12 w-auto" src="{{ asset('images/payments/Discovery.svg') }}" alt="Discovery">
                         </div>
                     </div>
                 </div>
+                </div>
+
+
             </div>
         </div>
 
